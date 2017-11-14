@@ -61,8 +61,8 @@ export class HomePage extends Component {
     }
 
     hbc = () =>{
-        // this.addItemService.getData(this.state.allIngredients);
-        this.addItemService.getData();
+        this.addItemService.getData(this.state.allIngredients);
+        // this.addItemService.getData();
         this.props.history.push('/');
     }
 

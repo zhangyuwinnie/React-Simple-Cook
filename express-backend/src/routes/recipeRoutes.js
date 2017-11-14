@@ -23,17 +23,17 @@ recipeRouter.route('/').get(function (req, res) {
 });
 
 recipeRouter.route('/recipes').get(function(req, res){
-  ingres = req.params.ingredients;
+  ingres = req.query;
   console.log("recipeRoutes, recipes");
-  console.log(ingres);
+  console.log(req.query);
   Recipe.find(function (err, itms){
     if(err){
       console.log(err);
     }
     else {
-      res.json(itms);
+      // res.json(itms);
 
-      // console.log(items);
+      console.log(itms);
     }
   });
 });
