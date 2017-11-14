@@ -36,7 +36,7 @@ recipeRouter.route('/recipes').get(function(req, res){
   //     console.log(itms);
   //   }
   // });
-  Recipe.find({ingredients:{$all:ingres.ingredients}}).exec(function (err, itms){
+  Recipe.find({ingredients:{$in:ingres.ingredients}}).exec(function (err, itms){
     if(err){
       console.log(err);
     }
