@@ -26,14 +26,24 @@ recipeRouter.route('/recipes').get(function(req, res){
   ingres = req.query;
   console.log("recipeRoutes, recipes");
   console.log(req.query);
-  Recipe.find(function (err, itms){
+  // Recipe.find(function (err, itms){
+  //   if(err){
+  //     console.log(err);
+  //   }
+  //   else {
+  //     // res.json(itms);
+
+  //     console.log(itms);
+  //   }
+  // });
+  Recipe.find({ingredients:{$all:ingres.ingredients}}).exec(function (err, itms){
     if(err){
       console.log(err);
     }
     else {
-      // res.json(itms);
+      res.json(itms);
 
-      console.log(itms);
+      // console.log(itms);
     }
   });
 });
