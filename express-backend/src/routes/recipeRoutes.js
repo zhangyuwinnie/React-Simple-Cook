@@ -8,10 +8,24 @@ var Recipe = require('../models/Recipe');
 
 // Defined get data(index or listing) route
 recipeRouter.route('/').get(function (req, res) {
+  console.log("recipeRoutes, index");
 
-  // ingres = req.params.ingredients;
-  // console.log("###");
-  // console.log(ingres);
+  Recipe.find(function (err, itms){
+    if(err){
+      console.log(err);
+    }
+    else {
+      res.json(itms);
+
+      // console.log(items);
+    }
+  });
+});
+
+recipeRouter.route('/recipes').get(function(req, res){
+  ingres = req.params.ingredients;
+  console.log("recipeRoutes, recipes");
+  console.log(ingres);
   Recipe.find(function (err, itms){
     if(err){
       console.log(err);

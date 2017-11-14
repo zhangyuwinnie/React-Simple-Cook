@@ -10,9 +10,10 @@ constructor(props) {
 
     }
     componentWillMount(){
-      axios.get('http://localhost:4200/')
+      axios.get('http://localhost:4200/recipes')
       .then(response => {
-        console.log("&&&");
+        console.log("Results,mount");
+        console.log("response");
         console.log(response);
         this.setState({ items: response.data });
       })

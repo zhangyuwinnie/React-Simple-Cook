@@ -53,7 +53,7 @@ export class HomePage extends Component {
                 </div>
                 <InputIngredients allIngredients={this.state.allIngredients}
                                   />
-                <FlatButton href="/recipes" label="Submit" primary={true} onClick={this.hbc}/>
+                <FlatButton href="#" label="Submit" primary={true} onClick={this.hbc}/>
 
 
             </div>
@@ -61,6 +61,7 @@ export class HomePage extends Component {
     }
 
     hbc = () =>{
+        // this.addItemService.getData(this.state.allIngredients);
         this.addItemService.getData();
         this.props.history.push('/');
     }
